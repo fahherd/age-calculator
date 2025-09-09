@@ -21,3 +21,6 @@ body {
     background-color: #141414;
     border-radius: 10px;
 }
+#text {
+    font-size: small;
+}

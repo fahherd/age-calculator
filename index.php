@@ -29,7 +29,7 @@
             </div>
             
             <div class="row">
-                <div class="col-md-6 offset-3">
+                <div class="col-md-6 offset-md-3">
                     <div class="card">
 
                         <form method="post">
@@ -70,11 +70,11 @@
            
 
                 <div class="row mt-5">
-                        <div class="p-4 me-2 offset-2 col-md-4 text-center text-white" id="card">
-                            <h5 class="fs-6">Anda berusia <b class="fs-5"><?php echo $age?></b> tahun</h5>
+                        <div class="p-4 me-2 mb-2 offset-md-2 col-md-4 text-center text-white" id="card">
+                            <h5 id="text">Anda berusia <b class="fs-6"><?php echo $age?></b> tahun</h5>
                         </div>
-                        <div class="p-4 col-md-4 text-center text-white" id="card">
-                            <h5 class="fs-6">Tersisa  <b class="fs-5"><?php echo $nextBirth?></b> hari menuju ulang tahun berikutnya</h5>
+                        <div class="p-4 mb-2 col-md-4 text-center text-white" id="card">
+                            <h5 id="text">Tersisa  <b class="fs-6"><?php echo $nextBirth?></b> hari menuju ulang tahun berikutnya</h5>
                         </div>
                 </div>        
             
