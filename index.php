@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Calculator - P1</title>
+    <title>Umurku - P1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -12,10 +13,8 @@
          <!-- NAVBAR -->
             <div class="row">
                 <div class="col-12-md">
-                    <nav class="navbar bg-light">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">Age Calculator</a>
-                        </div>
+                    <nav class="mb-4 navbar" id="navbar">
+                        <a class="navbar-brand text-white mx-auto fw-bold fs-5" href="https://umurku.great-site.net">Umurku</a>
                     </nav>
                 </div>
             </div>
@@ -24,22 +23,23 @@
            
             <!-- FORM -->
             <div class="row">
-                <div class="my-2 col-md-12 bg-light text-dark text-center">
-                    <h2 class="p-3"> Hitung Umur Anda</h2>
+                <div class="mt-5 col-md-12 text-white text-center">
+                    <h5 class="p-3" id="tittleForm">Hitung Umurku</h5>
                 </div>
             </div>
             
             <div class="row">
-                <dimyclass="col-md-12">
+                <div class="col-md-6 offset-3">
+                    <div class="card">
 
                         <form method="post">
-                            <div class="mb-3">
-                                <label for="input" class="p-2 form-label">Masukan Tanggal-Bulan-Tahun Lahir:</label>
-                                <input type="date" class="p-2 form-control" id="input" name="dateBirth">
-                                <div id="emailHelp" class="p-2 form-text">We'll never share your data with anyone else.</div>
-                                <button type="submit" class="p-2 btn btn-primary" name="Count">Submit</button>
-                            </form>
+                                <label for="input" class="pb-1 fs-6 text-white form-label">Masukan Tanggal/Bulan/Tahun Lahir :</label>
+                                <input type="date" class="p-2 fs-6 form-control" id="input" name="dateBirth">
+                                <div id="emailHelp" class="pb-3 form-text">Kami tidak akan membagikan data anda dengan siapapun.</div>
+                                <button type="submit" class="p-2 btn btn-danger" name="Count">Hitung Umur</button>
+                        </form>
                             
+                    </div>
                 </div>
             </div>
             
@@ -66,18 +66,17 @@
                 $nowBirth->modify('+1 year');
                 }
 
-                $nextBirth = $now->diff($nowBirth)->days + 1; ?>
+                $nextBirth = $now->diff($nowBirth)->days; ?>
            
 
-            <div class="my-4 row bg-light">
-                <div class="p-4 col-md-6 text-center">
-                    <h5>Umur anda saat ini : <?php echo $age?></h5>
-                </div>
-                <div class="p-4 col-md-6 text-center">
-                    <h5><?php echo $nextBirth?> hari sebelum ulang tahun selanjutnya!</h5>
-                </div>
-            </div>
-             
+                <div class="row mt-5">
+                        <div class="p-4 me-2 offset-2 col-md-4 text-center text-white" id="card">
+                            <h5 class="fs-6">Anda berusia <b class="fs-5"><?php echo $age?></b> tahun</h5>
+                        </div>
+                        <div class="p-4 col-md-4 text-center text-white" id="card">
+                            <h5 class="fs-6">Tersisa  <b class="fs-5"><?php echo $nextBirth?></b> hari menuju ulang tahun berikutnya</h5>
+                        </div>
+                </div>        
             
             <?php }?>
             
@@ -87,8 +86,8 @@
         <!-- FOOTER -->
             <div class="row">
                 <div class="col-md-12">
-                        <footer class="bg-dark text-white text-center fixed-bottom py-2">
-                            <p class="mb-0">© 2025 Age Calculator - @fahherd</p>
+                        <footer class="text-white text-center fixed-bottom py-2" id="footer">
+                            <p class="mb-0">© 2025 Umurku - @fahherd</p>
                         </footer>
                 </div>
             </div>
