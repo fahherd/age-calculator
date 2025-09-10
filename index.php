@@ -58,26 +58,32 @@
 
                 $birth = new DateTime($input);
                 $now   = new DateTime();
+
                 $age = $now->diff($birth)->y;
-
                 $nowBirth = new DateTime($now->format('Y') . '-' . $birth->format('m-d'));
-                
-                if ($nowBirth < $now) {
                 $nowBirth->modify('+1 year');
-                }
+                $nextBirth = $now->diff($nowBirth)->days; 
 
-                $nextBirth = $now->diff($nowBirth)->days; ?>
-           
-
-                <div class="row mt-5">
+                // OUTPUT VALIDATION
+                 if($birth <= $now){ ?>
+                    
+                    <div class="row mt-5">
                         <div class="p-4 me-2 mb-2 offset-md-2 col-md-4 text-center text-white" id="card">
                             <h5 id="text">Anda berusia <b class="fs-6"><?php echo $age?></b> tahun</h5>
                         </div>
                         <div class="p-4 mb-2 col-md-4 text-center text-white" id="card">
                             <h5 id="text">Tersisa  <b class="fs-6"><?php echo $nextBirth?></b> hari menuju ulang tahun berikutnya</h5>
                         </div>
-                </div>        
-            
+                    </div>  
+
+                 <?php } else { ?>
+                     <div class="row mt-5">
+                        <div class="p-4 me-2 mb-2 offset-md-2 col-md-8 text-center text-white" id="card">
+                            <h5 id="text">Usia anda tidak <b class="fs-6">Valid!</b></h5>
+                        </div>
+                    </div>
+                <?php } ?>
+
             <?php }?>
             
             
